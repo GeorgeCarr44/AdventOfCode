@@ -8,7 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Inputs\" />
+    <None Remove="Inputs\SonarSweep.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Inputs\SonarSweep.txt" />
   </ItemGroup>
 
 </Project>
