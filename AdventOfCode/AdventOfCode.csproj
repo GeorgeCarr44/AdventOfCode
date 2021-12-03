@@ -8,10 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Inputs\Dive.txt" />
     <None Remove="Inputs\SonarSweep.txt" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Inputs\Dive.txt" />
     <EmbeddedResource Include="Inputs\SonarSweep.txt" />
   </ItemGroup>
 
