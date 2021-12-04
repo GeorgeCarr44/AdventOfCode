@@ -34,5 +34,5 @@ using Advent_of_Code.BinaryDiagnostic;
 // Binary Diagnostic Day Three
 Console.WriteLine("Binary Diagnostic");
 // Part One
-BinaryDiagnostic.Run(1);
+BinaryDiagnostic.Run(2);
 
