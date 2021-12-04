@@ -1,5 +1,6 @@
 ﻿using Advent_of_Code.SonarSweep;
 using Advent_of_Code.Dive;
+using Advent_of_Code.BinaryDiagnostic;
 
 //// Sonar Sweep Day One
 //Console.WriteLine("Sonar Sweep");
@@ -18,16 +19,20 @@ using Advent_of_Code.Dive;
 
 
 //// Dive Day Two
-Console.WriteLine("Dive");
-// Part One
-Console.WriteLine("--- Part One ---");
-Console.ReadLine();
-Dive.Run(1);
-Console.ReadLine();
-//Part Two
-Console.WriteLine("--- Part Two ---");
-Console.ReadLine();
-Dive.Run(2);
-Console.ReadLine();
+//Console.WriteLine("Dive");
+//// Part One
+//Console.WriteLine("--- Part One ---");
+//Console.ReadLine();
+//Dive.Run(1);
+//Console.ReadLine();
+////Part Two
+//Console.WriteLine("--- Part Two ---");
+//Console.ReadLine();
+//Dive.Run(2);
+//Console.ReadLine();
 
+// Binary Diagnostic Day Three
+Console.WriteLine("Binary Diagnostic");
+// Part One
+BinaryDiagnostic.Run(1);
 
