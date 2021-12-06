@@ -6,15 +6,6 @@ namespace Advent_of_Code.Bingo
     {
         public static void Run(int task)
         {
-            if (task == 1)
-                TaskOne();
-            else if (task == 2)
-                TaskTwo();
-        }
-
-        //Only two bingo sheets
-        public static void TaskOne()
-        {
             List<string> input = File.ReadAllLines(@"C:\Users\gwcgr\Documents\Code\AdventOfCode\AdventOfCode\Inputs\Bingo.txt").ToList();
 
             // create an int list of the random numbers
@@ -53,17 +44,35 @@ namespace Advent_of_Code.Bingo
             bingoSheets.Add(new BingoSheet(tmpBingoLines));
             tmpBingoLines = new List<string>();
 
+            GetWinningSheet(randomNumbers, bingoSheets, task);
+        }
 
+        private static void GetWinningSheet(List<int> randomNumbers, List<BingoSheet> bingoSheets, int task)
+        {
             foreach (int randomNumber in randomNumbers)
             {
-                foreach(BingoSheet bingoSheet in bingoSheets)
+                foreach (BingoSheet bingoSheet in bingoSheets)
                 {
                     bingoSheet.MarkNumber(randomNumber);
-                    if(bingoSheet.HasRow() || bingoSheet.HasColumn())
+                    if (bingoSheet.HasRow() || bingoSheet.HasColumn())
                     {
-                        Console.WriteLine("Score: " + bingoSheet.GetScore(randomNumber));
-                        return;
+                        if(task == 1 || bingoSheets.Count == 1)
+                        {
+                            Console.WriteLine("Score: " + bingoSheet.GetScore(randomNumber));
+                            return;
+                        }
+
+                        var tmp = bingoSheets;
+                        tmp.Remove(bingoSheet);
+                        if (task == 2)
+                        {
+                            GetWinningSheet(randomNumbers, tmp, task);
+                            return;
+                        }
+
+                        //return;
                     }
+
                 }
             }
         }
@@ -200,11 +209,6 @@ namespace Advent_of_Code.Bingo
                 Value = value;
                 Marked = marked;
             }
-        }
-
-        public static void TaskTwo()
-        {
-
         }
     }
 }

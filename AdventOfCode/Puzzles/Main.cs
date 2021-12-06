@@ -42,6 +42,6 @@ using Advent_of_Code.Bingo;
 ////Bingo Day Four
 Console.WriteLine("Bingo");
 //Part One
-Bingo.Run(1);
+Bingo.Run(2);
 
 
