@@ -3,6 +3,7 @@ using Advent_of_Code.Dive;
 using Advent_of_Code.BinaryDiagnostic;
 using Advent_of_Code.Bingo;
 using Advent_of_Code.HydrothermalVenture;
+using Advent_of_Code.LanternFish;
 
 //// Sonar Sweep Day One
 //Console.WriteLine("Sonar Sweep");
@@ -45,7 +46,9 @@ using Advent_of_Code.HydrothermalVenture;
 ////Part One
 //Bingo.Run(2);
 
-//Hydrothermal Venture Day Five
-HydrothermalVenture.Run();
+////Hydrothermal Venture Day Five
+//HydrothermalVenture.Run();
 
-
+//Lantern Fish Day 6
+LanternFish.Run(80);
+LanternFish.Run(256);

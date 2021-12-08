@@ -12,10 +12,12 @@
     <None Remove="Inputs\Bingo.txt" />
     <None Remove="Inputs\Dive.txt" />
     <None Remove="Inputs\HydrothermalVenture.txt" />
+    <None Remove="Inputs\LanternFish.txt" />
     <None Remove="Inputs\SonarSweep.txt" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Inputs\LanternFish.txt" />
     <EmbeddedResource Include="Inputs\HydrothermalVenture.txt" />
     <EmbeddedResource Include="Inputs\Bingo.txt" />
     <EmbeddedResource Include="Inputs\Dive.txt" />
