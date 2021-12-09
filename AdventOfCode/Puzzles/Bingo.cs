@@ -6,7 +6,7 @@ namespace Advent_of_Code.Bingo
     {
         public static void Run(int task)
         {
-            List<string> input = File.ReadAllLines(@"C:\Users\gwcgr\Documents\Code\AdventOfCode\AdventOfCode\Inputs\Bingo.txt").ToList();
+            List<string> input = File.ReadAllLines(@"Inputs\Bingo.txt").ToList();
 
             // create an int list of the random numbers
             List<int> randomNumbers = new List<int>();

@@ -157,7 +157,7 @@ namespace Advent_of_Code.BinaryDiagnostic
 
         public static void Run(int task)
         {
-            var input = File.ReadAllLines(@"C:\Users\gwcgr\Documents\Code\AdventOfCode\AdventOfCode\Inputs\BinaryDiagnostic.txt");
+            var input = File.ReadAllLines(@"Inputs\BinaryDiagnostic.txt");
 
             if (task == 1)
             {
