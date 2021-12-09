@@ -14,6 +14,7 @@
     <None Remove="Inputs\Dive.txt" />
     <None Remove="Inputs\HydrothermalVenture.txt" />
     <None Remove="Inputs\LanternFish.txt" />
+    <None Remove="Inputs\SevenSegmentDisplay.txt" />
     <None Remove="Inputs\SonarSweep.txt" />
   </ItemGroup>
 
@@ -36,11 +37,11 @@
     <Content Include="Inputs\LanternFish.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Inputs\SonarSweep.txt">
+    <Content Include="Inputs\SevenSegmentDisplay.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Inputs\test.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Content Include="Inputs\SonarSweep.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
