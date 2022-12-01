@@ -5,6 +5,7 @@ using Advent_of_Code.Bingo;
 using Advent_of_Code.HydrothermalVenture;
 using Advent_of_Code.LanternFish;
 using Advent_of_Code.CrabSubmarines;
+using AdventOfCode.Puzzles;
 
 //// Sonar Sweep Day One
 //Console.WriteLine("Sonar Sweep");
@@ -55,4 +56,8 @@ using Advent_of_Code.CrabSubmarines;
 //LanternFish.Run(256);
 
 //Crab Submarines Day 7
-CrabSubmarines.Run();
+//CrabSubmarines.Run();
+
+
+//2022
+Calories.Run();
