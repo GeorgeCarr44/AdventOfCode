@@ -14,17 +14,45 @@
     <None Remove="Inputs\Dive.txt" />
     <None Remove="Inputs\HydrothermalVenture.txt" />
     <None Remove="Inputs\LanternFish.txt" />
+    <None Remove="Inputs\SevenSegmentDisplay.txt" />
     <None Remove="Inputs\SonarSweep.txt" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Inputs\CrabSubmarines.txt" />
-    <EmbeddedResource Include="Inputs\LanternFish.txt" />
-    <EmbeddedResource Include="Inputs\HydrothermalVenture.txt" />
-    <EmbeddedResource Include="Inputs\Bingo.txt" />
-    <EmbeddedResource Include="Inputs\Dive.txt" />
-    <EmbeddedResource Include="Inputs\BinaryDiagnostic.txt" />
-    <EmbeddedResource Include="Inputs\SonarSweep.txt" />
+    <Content Include="Inputs\BinaryDiagnostic.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Inputs\Bingo.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Inputs\CrabSubmarines.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Inputs\Dive.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Inputs\HydrothermalVenture.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Inputs\LanternFish.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Inputs\SevenSegmentDisplay.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Inputs\SonarSweep.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Inputs\CrabSubmarines.txt" />
+    <Resource Include="Inputs\LanternFish.txt" />
+    <Resource Include="Inputs\HydrothermalVenture.txt" />
+    <Resource Include="Inputs\Bingo.txt" />
+    <Resource Include="Inputs\Dive.txt" />
+    <Resource Include="Inputs\BinaryDiagnostic.txt" />
+    <Resource Include="Inputs\SonarSweep.txt" />
   </ItemGroup>
 
 </Project>

@@ -9,8 +9,7 @@ namespace Advent_of_Code.SonarSweep
             // Advent of Code
 
             //Day 1: Sonar Sweep
-            List<int> input = System.IO.File.ReadAllLines(@"C:\Users\gwcgr\Documents\Code\AdventOfCode\AdventOfCode\Inputs\SonarSweep.txt").Select(int.Parse).ToList();
-
+            List<int> input = System.IO.File.ReadAllLines(@"Inputs/SonarSweep.txt").Select(int.Parse).ToList();
             var previousDepth = 0;
             var currentDepth = 0;
             var increaseCount = 0;

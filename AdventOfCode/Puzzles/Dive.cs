@@ -26,7 +26,7 @@
         public static void Run(int task)
         {
 
-            string[] input = System.IO.File.ReadAllLines(@"C:\Users\gwcgr\Documents\Code\AdventOfCode\AdventOfCode\Inputs\Dive.txt");
+            string[] input = System.IO.File.ReadAllLines(@"Inputs\Dive.txt");
 
             int depth = 0;
             int horizontalPosition = 0;

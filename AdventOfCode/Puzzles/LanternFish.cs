@@ -4,7 +4,7 @@
     {
         public static void Run(int days)
         {
-            List<int> input = System.IO.File.ReadAllLines(@"C:\Users\GeorgeCarr\Documents\Code\AdventOfCode\AdventOfCode\Inputs\LanternFish.txt")[0].Split(',').Select(int.Parse).ToList();
+            List<int> input = System.IO.File.ReadAllLines(@"Inputs\LanternFish.txt")[0].Split(',').Select(int.Parse).ToList();
 
             long zero = 0;
             long one = 0;

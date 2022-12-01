@@ -1,10 +1,10 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace Advent_of_Code.Bingo
+namespace Advent_of_Code.SevenSegmentDisplay
 {
-    static class Bingo
+    static class SevenSegmentDisplay
     {
-        public static void Run(int task)
+        public static void Run()
         {
             List<string> input = File.ReadAllLines(@"Inputs\Bingo.txt").ToList();
 

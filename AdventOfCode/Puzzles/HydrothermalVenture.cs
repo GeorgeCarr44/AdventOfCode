@@ -7,7 +7,7 @@ namespace Advent_of_Code.HydrothermalVenture
         public static int[,] ventMap;
         public static void Run()
         {
-            string[] input = System.IO.File.ReadAllLines(@"C:\Users\gwcgr\Documents\Code\AdventOfCode\AdventOfCode\Inputs\HydrothermalVenture.txt");
+            string[] input = System.IO.File.ReadAllLines(@"Inputs\HydrothermalVenture.txt");
 
             List<Line> lines = new List<Line>();
 

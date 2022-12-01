@@ -4,7 +4,7 @@
     {
         public static void Run()
         {
-            List<int> input = System.IO.File.ReadAllLines(@"C:\Users\gwcgr\Documents\Code\AdventOfCode\AdventOfCode\Inputs\CrabSubmarines.txt")[0].Split(',').Select(int.Parse).ToList();
+            List<int> input = System.IO.File.ReadAllLines(@"Inputs\CrabSubmarines.txt")[0].Split(',').Select(int.Parse).ToList();
 
 
             int max = input.Max();
