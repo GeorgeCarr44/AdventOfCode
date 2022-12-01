@@ -12,7 +12,7 @@ namespace AdventOfCode.Puzzles
 
         public static void Run()
         {
-            string[] input = System.IO.File.ReadAllLines(@"C:\Users\gwcgr\Documents\Code\AdventOfCode\AdventOfCode\Inputs\Calories.txt");
+            string[] input = File.ReadAllLines(@"Inputs\Calories.txt");
 
             int tmpCalories = 0;
 

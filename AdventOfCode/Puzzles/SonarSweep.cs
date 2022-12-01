@@ -1,5 +1,5 @@
 ﻿
-namespace Advent_of_Code.SonarSweep
+namespace AdventOfCode.Puzzles
 {
     static class SonarSweep
     {

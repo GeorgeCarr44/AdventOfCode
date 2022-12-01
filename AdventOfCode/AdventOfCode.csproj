@@ -10,6 +10,7 @@
   <ItemGroup>
     <None Remove="Inputs\BinaryDiagnostic.txt" />
     <None Remove="Inputs\Bingo.txt" />
+    <None Remove="Inputs\Calories.txt" />
     <None Remove="Inputs\CrabSubmarines.txt" />
     <None Remove="Inputs\Dive.txt" />
     <None Remove="Inputs\HydrothermalVenture.txt" />
@@ -23,6 +24,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Inputs\Bingo.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Inputs\Calories.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Inputs\CrabSubmarines.txt">

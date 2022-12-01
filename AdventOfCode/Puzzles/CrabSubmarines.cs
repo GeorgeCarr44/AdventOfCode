@@ -1,4 +1,4 @@
-﻿namespace Advent_of_Code.CrabSubmarines
+﻿namespace AdventOfCode.Puzzles
 {
     static class CrabSubmarines
     {

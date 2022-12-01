@@ -1,4 +1,4 @@
-﻿namespace Advent_of_Code.Dive
+﻿namespace AdventOfCode.Puzzles
 {
     static class Dive
     {

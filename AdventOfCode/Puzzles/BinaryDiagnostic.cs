@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Advent_of_Code.BinaryDiagnostic
+namespace AdventOfCode.Puzzles
 {
     static class BinaryDiagnostic
     {

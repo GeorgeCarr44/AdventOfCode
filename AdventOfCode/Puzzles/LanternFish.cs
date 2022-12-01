@@ -1,4 +1,4 @@
-﻿namespace Advent_of_Code.LanternFish
+﻿namespace AdventOfCode.Puzzles
 {
     static class LanternFish
     {

@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace Advent_of_Code.HydrothermalVenture
+namespace AdventOfCode.Puzzles
 {
     static class HydrothermalVenture
     {
