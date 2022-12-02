@@ -15,6 +15,7 @@
     <None Remove="Inputs\Dive.txt" />
     <None Remove="Inputs\HydrothermalVenture.txt" />
     <None Remove="Inputs\LanternFish.txt" />
+    <None Remove="Inputs\rockPaperScissors.txt" />
     <None Remove="Inputs\SevenSegmentDisplay.txt" />
     <None Remove="Inputs\SonarSweep.txt" />
   </ItemGroup>
@@ -24,6 +25,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Inputs\Bingo.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Inputs\RockPaperScissors.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Inputs\Calories.txt">

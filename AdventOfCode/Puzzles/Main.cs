@@ -45,4 +45,7 @@
 
 
 //2022
-Calories.Run();
+//Calories.Run();
+
+//Rock Paper Scissors
+RockPaperScissors.Run();
