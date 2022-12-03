@@ -45,7 +45,11 @@
 
 
 //2022
+//Day 1 Calories
 //Calories.Run();
 
-//Rock Paper Scissors
-RockPaperScissors.Run();
+//Day 2 Rock Paper Scissors
+//RockPaperScissors.Run();
+
+//Day 3 Backpacks
+Backpack.Run();

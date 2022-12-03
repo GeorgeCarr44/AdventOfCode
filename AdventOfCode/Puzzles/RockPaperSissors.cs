@@ -19,7 +19,11 @@ namespace AdventOfCode.Puzzles
         {
             { "A", RPS.Rock },
             { "B", RPS.Paper},
-            { "C", RPS.Scissors }
+            { "C", RPS.Scissors },
+            { "X", RPS.Rock },
+            { "Y", RPS.Paper},
+            { "Z", RPS.Scissors }
+
         };
 
         enum WDL
@@ -33,7 +37,7 @@ namespace AdventOfCode.Puzzles
         {
             { "X", WDL.Lose },
             { "Y", WDL.Draw },
-            { "Z", WDL.Win }
+            { "Z", WDL.Win },
         };
 
 
@@ -139,7 +143,9 @@ namespace AdventOfCode.Puzzles
             foreach (var line in input)
             {
                 var plays = line.Split(' ');
-                results.Add(new KeyValuePair<RPS, RPS>(InputConversion[plays[0]], GetResponse(InputConversion[plays[0]], ResponseConversion[plays[1]])));
+                //results.Add(new KeyValuePair<RPS, RPS>(InputConversion[plays[0]], GetResponse(InputConversion[plays[0]], ResponseConversion[plays[1]])));
+                //part one
+                results.Add(new KeyValuePair<RPS, RPS>(InputConversion[plays[0]], InputConversion[plays[1]]));
             }
 
             return results;

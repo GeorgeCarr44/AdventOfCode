@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Inputs\Backpack.txt" />
     <None Remove="Inputs\BinaryDiagnostic.txt" />
     <None Remove="Inputs\Bingo.txt" />
     <None Remove="Inputs\Calories.txt" />
@@ -25,6 +26,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Inputs\Bingo.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Inputs\Backpack.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Inputs\RockPaperScissors.txt">
