@@ -54,5 +54,9 @@
 ////Day 3 Backpacks
 //Backpack.Run();
 
-//Day 4 CampCleanup
-CampCleanup.Run();
+////Day 4 CampCleanup
+//CampCleanup.Run();
+
+//Day 5 Stacks
+Stacks.Run();
+    

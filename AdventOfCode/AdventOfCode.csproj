@@ -20,9 +20,13 @@
     <None Remove="Inputs\rockPaperScissors.txt" />
     <None Remove="Inputs\SevenSegmentDisplay.txt" />
     <None Remove="Inputs\SonarSweep.txt" />
+    <None Remove="Inputs\Stacks.txt" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Inputs\Stacks.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Inputs\CampCleanup.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
