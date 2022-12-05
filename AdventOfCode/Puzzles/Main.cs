@@ -51,5 +51,8 @@
 //Day 2 Rock Paper Scissors
 //RockPaperScissors.Run();
 
-//Day 3 Backpacks
-Backpack.Run();
+////Day 3 Backpacks
+//Backpack.Run();
+
+//Day 4 CampCleanup
+CampCleanup.Run();
