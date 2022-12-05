@@ -61,12 +61,32 @@ namespace AdventOfCode.Puzzles
                 }
             }
 
-            Console.WriteLine("Full Contain");
+            Console.WriteLine("Part 1");
             Console.WriteLine(fullContain);
         }
 
         private static void Part2()
         {
+            int contain = 0;
+
+            foreach (var pair in Input)
+            {
+                int[]? f = pair[0].Split("-")?.Select(Int32.Parse)?.ToArray();
+                int[]? s = pair[1].Split("-")?.Select(Int32.Parse)?.ToArray();
+
+                if (f != null && s != null)
+                {
+                    if (f[0] <= s[0] && f[1] >= s[0] || f[0] <= s[1] && f[1] >= s[1]
+                        || s[0] <= f[0] && s[1] >= f[0] || s[0] <= f[1] && s[1] >= f[1])
+                    {
+                        contain++;
+                    }
+
+                }
+            }
+
+            Console.WriteLine("Part 2");
+            Console.WriteLine(contain);
         }
     }
 }
