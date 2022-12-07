@@ -62,6 +62,28 @@ namespace AdventOfCode.Puzzles
             }
         }
 
+        public List<StarFile> ListAllDirectories()
+        {
+            if(this.Type == FileType.Dir)
+            {
+                var directories = new List<StarFile> { this };
+
+                foreach (var i in this.Children)
+                {
+                    if (i.Type == FileType.Dir)
+                    {
+                        //look for sub dir
+                        directories.AddRange(i.ListAllDirectories());
+                    }
+                }
+                return directories;
+            }
+            else
+            {
+                return new List<StarFile>();
+            }
+        }
+
     }
 
 
@@ -78,36 +100,50 @@ namespace AdventOfCode.Puzzles
 
         private static void Part1()
         {
-            var system = CreateSystem();
+            var system = CreateSystemFromInput();
             system.CalculateSize();
-
-            int sum = system.Size <= 100000 ? system.Size : 0;
-
-            sum += AddSum(system);
-
 
             PrintSystem(system, 0);
             Console.WriteLine();
             Console.WriteLine("Sum");
-            Console.WriteLine(sum);
+            Console.WriteLine(SumAllDirectories(system, 100000));
         }
 
-        private static int AddSum(StarFile dir)
+        private static void Part2()
+        {
+            int totalSpace = 70000000;
+            int spaceNeeded = 30000000;
+            var system = CreateSystemFromInput();
+            system.CalculateSize();
+            var list = system.ListAllDirectories();
+            list = list.OrderBy(x => x.Size).ToList();
+            foreach (var dir in list)
+            {
+                //Remaining space - what we want to remove >= spaceNeeded
+                if(totalSpace - (system.Size - dir.Size) >= spaceNeeded)
+                { 
+                    Console.WriteLine($"Size:{dir.Size} - {dir.Name} {dir.Type} ");
+                    break;
+                
+                }
+            }
+        }
+        private static int SumAllDirectories(StarFile dir, int limit)
         {
             int sum = 0;
+            if (limit == 0 || dir.Size <= limit)
+                sum += dir.Size;
+
             foreach (var i in dir.Children)
             {
                 if (i.Type == FileType.Dir)
                 {
-                    if (i.Size <= 100000)
-                        sum += i.Size;
                     //look for sub dir
-                    sum += AddSum(i);
+                    sum += SumAllDirectories(i, limit);
                 }
             }
             return sum;
         }
-
 
         private static void PrintSystem(StarFile dir, int tab)
         {
@@ -123,25 +159,17 @@ namespace AdventOfCode.Puzzles
             }
         }
 
-        private static void Part2()
-        {
-
-        }
-
-        private static StarFile CreateSystem()
+        private static StarFile CreateSystemFromInput()
         {
             StarFile root = new StarFile("/", FileType.Dir);
 
             StarFile currentDir = root;
-
-            bool ls = false;
 
             foreach (var line in Input)
             {
                 //Commands
                 if (line.StartsWith("$ cd"))
                 {
-                    ls = false;
                     string filename = line.Split("$ cd ")[1];
 
                     if (filename == "/")
@@ -161,7 +189,7 @@ namespace AdventOfCode.Puzzles
                 }
                 else if (line.StartsWith("$ ls"))
                 {
-                    ls = true;
+
                 }
                 else
                 {
@@ -179,7 +207,6 @@ namespace AdventOfCode.Puzzles
                     }
                 }
             }
-
             return root;
         }
     }
