@@ -15,6 +15,7 @@
     <None Remove="Inputs\CampCleanup.txt" />
     <None Remove="Inputs\CrabSubmarines.txt" />
     <None Remove="Inputs\Dive.txt" />
+    <None Remove="Inputs\FileSystem.txt" />
     <None Remove="Inputs\HydrothermalVenture.txt" />
     <None Remove="Inputs\LanternFish.txt" />
     <None Remove="Inputs\PacketMarker.txt" />
@@ -25,6 +26,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Inputs\FileSystem.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Inputs\PacketMarker.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
