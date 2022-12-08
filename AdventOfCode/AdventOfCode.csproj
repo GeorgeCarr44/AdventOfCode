@@ -23,9 +23,13 @@
     <None Remove="Inputs\SevenSegmentDisplay.txt" />
     <None Remove="Inputs\SonarSweep.txt" />
     <None Remove="Inputs\Stacks.txt" />
+    <None Remove="Inputs\Trees.txt" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Inputs\Trees.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Inputs\FileSystem.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
