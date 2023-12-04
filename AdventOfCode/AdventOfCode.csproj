@@ -20,6 +20,7 @@
     <None Remove="Inputs\LanternFish.txt" />
     <None Remove="Inputs\PacketMarker.txt" />
     <None Remove="Inputs\rockPaperScissors.txt" />
+    <None Remove="Inputs\RopeSimulation.txt" />
     <None Remove="Inputs\SevenSegmentDisplay.txt" />
     <None Remove="Inputs\SonarSweep.txt" />
     <None Remove="Inputs\Stacks.txt" />
@@ -27,6 +28,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Inputs\RopeSimulation.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Inputs\Trees.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
