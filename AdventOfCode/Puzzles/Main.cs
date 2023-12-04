@@ -66,6 +66,14 @@
 ////Day 7
 //FileSystem.Run();
 
-//Day 8
-Trees.Run();
+////Day 8
+//Trees.Run();
+
+//Day 9
+//RopeSimulation.Run();
+
+
+//2023
+////Day 1
+Trebuchet.Run();
     

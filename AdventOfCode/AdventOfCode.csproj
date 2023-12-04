@@ -24,10 +24,14 @@
     <None Remove="Inputs\SevenSegmentDisplay.txt" />
     <None Remove="Inputs\SonarSweep.txt" />
     <None Remove="Inputs\Stacks.txt" />
+    <None Remove="Inputs\Trebuchet.txt" />
     <None Remove="Inputs\Trees.txt" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Inputs\Trebuchet.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Inputs\RopeSimulation.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
