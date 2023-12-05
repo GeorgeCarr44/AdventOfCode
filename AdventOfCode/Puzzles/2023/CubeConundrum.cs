@@ -12,40 +12,41 @@ namespace AdventOfCode.Puzzles
         class Game
         {
             public int Id { get; set; }
-            public List<Show> Shows { get; set; }
+            public int MaxRed { get; set; }
+            public int MaxBlue { get; set; }
+            public int MaxGreen { get; set; }
 
             public Game(string line) {
                 var lineInfo = line.Split(':');
                 Id = Convert.ToInt32(lineInfo[0].Split(' ')[1]);
-                Shows = new List<Show>();
                 foreach (var showInfo in lineInfo[1].Split(';'))
                 {
-                    Shows.Add(new Show(showInfo.Trim()));
+                    showInfo.Trim();
+                    var groupInfo = showInfo.Split(',');
+                    foreach (var item in groupInfo)
+                    {
+                        var i = item.Trim().Split(" ");
+                        var num = Convert.ToInt32(i[0]);
+                        switch ((Colour)Enum.Parse(typeof(Colour), i[1], true))
+                        {
+                            case Colour.Red:
+                                if (MaxRed < num)
+                                    MaxRed = num;
+                                break;
+                            case Colour.Blue:
+                                if (MaxBlue < num)
+                                    MaxBlue = num;
+                                break;
+                            case Colour.Green:
+                                if (MaxGreen< num)
+                                    MaxGreen = num;
+                                break;
+                        }
+                    }
                 }
             }
         }
 
-        class Show 
-        {
-            public List<CubeGroup> CubeGroups { get; set; }
-            public Show(string showInfo)
-            {
-                CubeGroups = new List<CubeGroup>();
-                var groupInfo = showInfo.Split(',');
-                foreach (var item in groupInfo)
-                {
-                    var i = item.Trim().Split(" ");
-
-                    CubeGroups.Add(new CubeGroup(){Colour = (Colour)Enum.Parse(typeof(Colour), i[1], true), Number = Convert.ToInt32(i[0])});
-                }
-            }
-        }
-
-        class CubeGroup
-        {
-            public Colour Colour { get; set; }
-            public int Number { get; set; }
-        }
         enum Colour
         {
             Red, 
@@ -55,11 +56,10 @@ namespace AdventOfCode.Puzzles
 
         public static string[] Input { get; set; }
 
-
         private static List<Game> Games {get; set; }
         public static void Run()
         {
-            Input = File.ReadAllLines(@"C:\Users\GeorgeCarr\Documents\Code\AdventOfCode\AdventOfCode\Inputs\Cubes.txt");
+            Input = File.ReadAllLines(@"Inputs\Cubes.txt");
             Games = new List<Game>();
             foreach (var line in Input)
             {
@@ -75,14 +75,20 @@ namespace AdventOfCode.Puzzles
             //Red 12
             //Green 13
             //Blue 14
-
+            int output1 = 0;
+            int output2 = 0;
             foreach(var game in Games)
             {
-                foreach (Show show in game.Shows)
+
+                output2 += game.MaxRed * game.MaxGreen * game.MaxBlue;
+
+                if(!(game.MaxRed > 12 || game.MaxGreen > 13 || game.MaxBlue > 14))
                 {
-                    show.CubeGroups.Where(x => x.Number > 2);
+                    output1 += game.Id;
                 }
             }
+            Console.WriteLine($"Part 1: {output1}");
+            Console.WriteLine($"Part 2: {output2}");
         }
 
         private static void Part2()
