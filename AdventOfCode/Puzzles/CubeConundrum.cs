@@ -6,27 +6,83 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode.Puzzles
 {
-    static class Backpack
+    static class CubeConundrum
     {
 
+        class Game
+        {
+            public int Id { get; set; }
+            public List<Show> Shows { get; set; }
+
+            public Game(string line) {
+                var lineInfo = line.Split(':');
+                Id = Convert.ToInt32(lineInfo[0].Split(' ')[1]);
+                Shows = new List<Show>();
+                foreach (var showInfo in lineInfo[1].Split(';'))
+                {
+                    Shows.Add(new Show(showInfo.Trim()));
+                }
+            }
+        }
+
+        class Show 
+        {
+            public List<CubeGroup> CubeGroups { get; set; }
+            public Show(string showInfo)
+            {
+                CubeGroups = new List<CubeGroup>();
+                var groupInfo = showInfo.Split(',');
+                foreach (var item in groupInfo)
+                {
+                    var i = item.Trim().Split(" ");
+
+                    CubeGroups.Add(new CubeGroup(){Colour = (Colour)Enum.Parse(typeof(Colour), i[1], true), Number = Convert.ToInt32(i[0])});
+                }
+            }
+        }
+
+        class CubeGroup
+        {
+            public Colour Colour { get; set; }
+            public int Number { get; set; }
+        }
+        enum Colour
+        {
+            Red, 
+            Blue, 
+            Green
+        }
+
         public static string[] Input { get; set; }
+
+
+        private static List<Game> Games {get; set; }
         public static void Run()
         {
-            Input = File.ReadAllLines(@"Inputs\Backpack.txt");
+            Input = File.ReadAllLines(@"C:\Users\GeorgeCarr\Documents\Code\AdventOfCode\AdventOfCode\Inputs\Cubes.txt");
+            Games = new List<Game>();
+            foreach (var line in Input)
+            {
+                Games.Add(new Game(line));
+            }
+
             Part1();
-            Part2();
         }
 
         private static void Part1()
         {
-            int sumPriority = 0;
-            foreach (var backpack in Input)
-            {
-                sumPriority += LetterToNumber(AppearsInBothCompartments(backpack));
-            }
 
-            Console.WriteLine("Total common items priority:");
-            Console.WriteLine(sumPriority);
+            //Red 12
+            //Green 13
+            //Blue 14
+
+            foreach(var game in Games)
+            {
+                foreach (Show show in game.Shows)
+                {
+                    show.CubeGroups.Where(x => x.Number > 2);
+                }
+            }
         }
 
         private static void Part2()

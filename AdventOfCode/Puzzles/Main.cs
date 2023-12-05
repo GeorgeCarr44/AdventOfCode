@@ -75,5 +75,8 @@
 
 //2023
 ////Day 1
-Trebuchet.Run();
+//Trebuchet.Run();
+
+//Day 2
+CubeConundrum.Run();
     
