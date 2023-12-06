@@ -77,6 +77,9 @@
 ////Day 1
 //Trebuchet.Run();
 
-//Day 2
-CubeConundrum.Run();
+////Day 2
+//CubeConundrum.Run();
+
+// Day 3
+GondolaLift.Run();
     
