@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Inputs\2024\HistorianHysteria.txt" />
     <None Remove="Inputs\Backpack.txt" />
     <None Remove="Inputs\BinaryDiagnostic.txt" />
     <None Remove="Inputs\Bingo.txt" />
@@ -28,6 +29,12 @@
     <None Remove="Inputs\Stacks.txt" />
     <None Remove="Inputs\Trebuchet.txt" />
     <None Remove="Inputs\Trees.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Inputs\2024\HistorianHysteria.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

@@ -1,4 +1,5 @@
 ﻿using AdventOfCode.Puzzles;
+using AdventOfCode.Puzzles._2024;
 
 //// Sonar Sweep Day One
 //Console.WriteLine("Sonar Sweep");
@@ -33,47 +34,47 @@
 ////Part One
 //Bingo.Run(2);
 
-////Hydrothermal Venture Day Five
+//// Hydrothermal Venture Day Five
 //HydrothermalVenture.Run();
 
-////Lantern Fish Day 6
+//// Lantern Fish Day 6
 //LanternFish.Run(80);
 //LanternFish.Run(256);
 
-////Crab Submarines Day 7
+//// Crab Submarines Day 7
 ////CrabSubmarines.Run();
 
 
-//2022
-//Day 1 Calories
+// 2022
+// Day 1 Calories
 //Calories.Run();
 
-//Day 2 Rock Paper Scissors
+// Day 2 Rock Paper Scissors
 //RockPaperScissors.Run();
 
-////Day 3 Backpacks
+//// Day 3 Backpacks
 //Backpack.Run();
 
-////Day 4 CampCleanup
+//// Day 4 CampCleanup
 //CampCleanup.Run();
 
-//Day 5 Stacks
+// Day 5 Stacks
 //Stacks.Run();
 
-////Day 6
+//// Day 6
 //PacketMarker.Run();
 
-////Day 7
+//// Day 7
 //FileSystem.Run();
 
-////Day 8
+//// Day 8
 //Trees.Run();
 
-//Day 9
+// Day 9
 //RopeSimulation.Run();
 
 
-//2023
+// 2023
 ////Day 1
 //Trebuchet.Run();
 
@@ -81,5 +82,9 @@
 //CubeConundrum.Run();
 
 // Day 3
-GondolaLift.Run();
+//GondolaLift.Run();
+
+// 2024
+HistorianHysteria.Run();
+
     
