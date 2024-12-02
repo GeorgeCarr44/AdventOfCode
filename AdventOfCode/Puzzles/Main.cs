@@ -84,7 +84,11 @@ using AdventOfCode.Puzzles._2024;
 // Day 3
 //GondolaLift.Run();
 
-// 2024
-HistorianHysteria.Run();
+//// 2024
+//// Day 1
+//HistorianHysteria.Run();
+
+//// Day 2
+NuclearPlant.Run();
 
     
