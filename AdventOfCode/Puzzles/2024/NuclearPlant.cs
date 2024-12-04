@@ -23,19 +23,12 @@ namespace AdventOfCode.Puzzles._2024
             foreach (var report in Reports)
             {
                 int? prev = null;
-                Trend trend = Trend.None;
+                Trend trend = GetTrend(report);
 
                 foreach (var v in report)
                 {
                     if (prev.HasValue)
                     {
-                        // set increase decrease
-                        if (trend == Trend.None)
-                        {
-                            trend = GetTrend(v, prev.Value);
-                            
-                        }
-
                         if (!SafetyCheck(v, prev.Value, trend))
                         {
                             --safeReportsCount;
@@ -54,41 +47,65 @@ namespace AdventOfCode.Puzzles._2024
             int safeReportsCount = Reports.Count;
             foreach (var report in Reports)
             {
-                int? prev = null;
-                Trend trend = Trend.None;
-                int problems = 0;
-
-                foreach (var v in report)
-                {
-                    if (prev.HasValue)
-                    {
-                        // set increase decrease
-                        if (trend == Trend.None)
-                        {
-                            trend = GetTrend(v, prev.Value);
-                            
-                        }
-
-                        if (!SafetyCheck(v, prev.Value, trend))
-                        {
-                            problems++;
-                            if (problems > 1)
-                            {
-                                --safeReportsCount;
-                                break;
-                            }
-                        }
-                    }
-                    prev = v;
-                }
-
+                Trend trend = GetTrend(report);
+                if (!CheckReport(report, trend))
+                    safeReportsCount--;
             }
             Console.WriteLine("Total Safe Reports With Dampener: " + safeReportsCount);
         }
 
-        private static Trend GetTrend(int v, int prev)
+        private static bool CheckReport(List<int> report, Trend trend, bool reverse = false)
         {
-            if (v > prev)
+            int prev = 0;
+            int problems = 0;
+
+            for (int i = 0; i < report.Count; i++)
+            {
+                if (i >= 1)
+                {
+                    if (!SafetyCheck(report[i], report[prev], trend))
+                    {
+                        if (i == 1 && !reverse)
+                        {
+                            if (!reverse)
+                            {
+                                report.Reverse();
+                                return CheckReport(report, trend, true);
+                            }
+                            else
+                                return false;
+                        }
+
+                        problems++;
+                        if (problems > 1)
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                }
+                prev = i;
+            }
+
+            return true;
+        }
+
+        private static Trend GetTrend(List<int> report)
+        {
+            int trendNum = 0;
+
+            for (int i = 0; i < report.Count() - 1; i++)
+            {
+                if (report[i] < report[i + 1])
+                    trendNum++;
+                else
+                    trendNum--;
+            }
+
+            if (trendNum > 0)
                 return Trend.Increase;
             else
                 return Trend.Decrease;
@@ -96,7 +113,7 @@ namespace AdventOfCode.Puzzles._2024
 
         private static bool SafetyCheck(int v, int prev, Trend trend)
         {
-            if (trend != GetTrend(v, prev))
+            if ((trend == Trend.Increase && prev > v) || (trend == Trend.Decrease && prev < v))
                 return false;
 
             var diff = GetDifference(v, prev);
