@@ -44,85 +44,47 @@ namespace AdventOfCode.Puzzles._2024
 
         private static void Part2()
         {
-            int safeReportsCount = Reports.Count;
+            int safeReportsCount = 0;
             foreach (var report in Reports)
             {
-                Trend trend = GetTrend(report);
                 if (!CheckReport(report))
-                    safeReportsCount--;
+                {
+                    for (int i = 0; i < report.Count; i++)
+                    {
+                        List<int> trimmedReport = new List<int>(report);
+                        trimmedReport.RemoveAt(i);
+                        if (CheckReport(trimmedReport))
+                        {
+                            safeReportsCount++;
+                            break;
+                        }
+                    }
+                }
+                else
+                    safeReportsCount++;
             }
             Console.WriteLine("Total Safe Reports With Dampener: " + safeReportsCount);
         }
 
 
-        private static bool CheckReport(List<int> report, int? skip = null)
+        private static bool CheckReport(List<int> report)
         {
             Trend trend = GetTrend(report);
             int? prev = null;
 
             for (int i = 0; i < report.Count; i++)
             {
-                if (i != skip)
+                if (prev.HasValue)
                 {
-                    if (prev.HasValue)
+                    if (!SafetyCheck(report[i], report[prev.Value], trend))
                     {
-                        if (!SafetyCheck(report[i], report[prev.Value], trend))
-                        {
-                            if(skip != null)
-                                return false;
-
-                            for (int j = 0; j < report.Count; j++)
-                            {
-                                if(CheckReport(report, j))
-                                    return true;
-                            }
-                        }
+                        return false;
                     }
-                    prev = i;
                 }
+                prev = i;
             }
-
             return true;
         }
-
-        //private static bool CheckReport(List<int> report, Trend trend, bool reverse = false)
-        //{
-        //    int prev = 0;
-        //    int problems = 0;
-
-        //    for (int i = 0; i < report.Count; i++)
-        //    {
-        //        if (i >= 1)
-        //        {
-        //            if (!SafetyCheck(report[i], report[prev], trend))
-        //            {
-        //                if (i == 1 && !reverse)
-        //                {
-        //                    if (!reverse)
-        //                    {
-        //                        report.Reverse();
-        //                        return CheckReport(report, trend, true);
-        //                    }
-        //                    else
-        //                        return false;
-        //                }
-
-        //                problems++;
-        //                if (problems > 1)
-        //                {
-        //                    return false;
-        //                }
-        //                else
-        //                {
-        //                    continue;
-        //                }
-        //            }
-        //        }
-        //        prev = i;
-        //    }
-
-        //    return true;
-        //}
 
         private static Trend GetTrend(List<int> report)
         {
