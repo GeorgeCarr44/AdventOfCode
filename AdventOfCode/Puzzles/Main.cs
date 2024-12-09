@@ -89,6 +89,9 @@ using AdventOfCode.Puzzles._2024;
 //HistorianHysteria.Run();
 
 //// Day 2
-NuclearPlant.Run();
+//NuclearPlant.Run();
+
+// Day 3
+MullItOver.Run();
 
     
