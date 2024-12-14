@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Inputs\2024\CeresSearch.txt" />
     <None Remove="Inputs\2024\HistorianHysteria.txt" />
     <None Remove="Inputs\2024\MullItOver.txt" />
     <None Remove="Inputs\2024\NuclearPlant.txt" />
@@ -34,6 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Inputs\2024\CeresSearch.txt" />
     <Content Include="Inputs\2024\MullItOver.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
