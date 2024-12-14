@@ -43,6 +43,9 @@
     <Content Include="Inputs\2024\HistorianHysteria.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Update="Inputs\2024\CeresSearch.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

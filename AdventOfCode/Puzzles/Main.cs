@@ -92,6 +92,7 @@ using AdventOfCode.Puzzles._2024;
 //NuclearPlant.Run();
 
 // Day 3
-MullItOver.Run();
+//MullItOver.Run();
 
-    
+// Day 4
+CeresSearch.Run();    
